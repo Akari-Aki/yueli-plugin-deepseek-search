@@ -115,7 +115,7 @@ async def test_real_discovery_registration_and_config_roundtrip(loaded):
     assert tomllib.loads((directory / 'config.toml').read_text(encoding='utf-8'))['plugin'] == {
         'enabled': True, 'api_key': '', 'base_url': 'https://api.deepseek.com', 'daily_limit': 50,
     }
-    assert plugin.manifest.plugin_id == 'akari.deepseek-search' and plugin.manifest.version == '0.1.0'
+    assert plugin.manifest.plugin_id == 'akari.deepseek-search' and plugin.manifest.version == '0.1.1'
 
 
 @pytest.mark.asyncio
@@ -242,7 +242,7 @@ def test_manifest_loads_on_supported_hosts(monkeypatch):
     from src.plugin_system.manifest import check_host_compatibility, load_manifest
 
     manifest = load_manifest(ROOT / '_manifest.json')
-    for host in ('0.2.0', '0.2.5'):
+    for host in ('0.2.0', '0.2.5', '0.3.0'):
         monkeypatch.setattr('src.plugin_system.manifest.APP_VERSION', host)
         assert check_host_compatibility(manifest, third_party=True, force=False).decision == '正常'
     monkeypatch.setattr('src.plugin_system.manifest.APP_VERSION', '0.1.9')

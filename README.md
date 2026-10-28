@@ -7,14 +7,23 @@ YueLiBot 的外部工具插件。对方让她查资料，或者回答依赖近�
 
 查询词会发给 DeepSeek，请勿把私人信息写入查询词；工具说明已要求她只写话题关键词。
 
+## 与「联网搜索」的区别
+
+本插件只需填一个 DeepSeek API 密钥，接口格式已经内置。插件商店里名为「联网搜索」（`yueli.web-search`）
+的是另一个通用插件，要自己填写搜索服务的接口地址、请求格式和结果字段，适合接智谱、博查、Tavily 等其他服务；
+装错成它并只填密钥时，搜索工具不会出现。两个插件不必同时安装。
+
 ## 安装
 
 - **插件商店**：在 [月璃插件商店](https://plugins.yuelibot.org/plugins/akari.deepseek-search/)
   点「一键安装」，在管理面板确认后重启。
-- **手动安装**：下载商店页上的 ZIP，解压到月璃目录下的 `plugins/`，得到
-  `plugins/akari.deepseek-search/plugin.py`，然后重启。
+- **手动安装**：下载商店页上的 ZIP，**解压**到月璃目录下的 `plugins/`，得到
+  `plugins/akari.deepseek-search/plugin.py` 与 `plugins/akari.deepseek-search/_manifest.json`，然后重启。
+  ZIP 文件本身放进 `plugins/` 不会被加载；也不要再多套一层同名目录。
 
-本版声明支持主程序 0.2.0～0.2.5。更新的主程序会按兼容模式加载，并在启动日志中提示一次。
+装好并填入密钥、重启后，启动日志会出现「DeepSeek 联网搜索已启用」；没有这一行说明插件没被加载或密钥未生效。
+
+本版声明支持主程序 0.2.0～0.3.0。更新的主程序会按兼容模式加载，并在启动日志中提示一次。
 
 ## 配置
 

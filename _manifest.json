@@ -3,9 +3,9 @@
   "id": "akari.deepseek-search",
   "plugin_type": "tool",
   "name": "DeepSeek 联网搜索",
-  "version": "0.1.0",
-  "description": "用 DeepSeek Search API 搜索公开网页，把标题、来源、日期和摘要作为外部观察交给对话",
+  "version": "0.1.1",
+  "description": "填一个 DeepSeek API 密钥即可使用的联网搜索，不用配置接口格式；把网页标题、来源、日期和摘要交给对话。想接智谱、博查等其他搜索服务，请装「联网搜索」",
   "author": { "name": "Akari-Aki", "url": "https://github.com/Akari-Aki" },
   "license": "AGPL-3.0-only",
-  "host_application": { "min_version": "0.2.0", "max_version": "0.2.5" }
+  "host_application": { "min_version": "0.2.0", "max_version": "0.3.0" }
 }
